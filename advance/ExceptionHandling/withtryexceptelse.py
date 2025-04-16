@@ -19,3 +19,25 @@ def withtryexceptfinally():
             print("finally block")
 
 withtryexceptfinally()
+
+"""
+Enter the integer : rajr
+ValueError
+finally block
+Enter the integer : 233
+54289
+else block
+finally block
+
+
+"""
+
+try:
+    num = int(input("Enter a number: "))  # Could raise ValueError
+    result = 10 / num                     # Could raise ZeroDivisionError
+except (ValueError, ZeroDivisionError) as e:
+    print("Caught an exception:", e)
+else:
+    print("Result:", result)
+finally:
+    print("Done.")
